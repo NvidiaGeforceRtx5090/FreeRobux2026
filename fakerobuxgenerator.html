@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FREE ROBUX GENERATOR 2024</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #2a2a2a;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            text-align: center;
+            width: 400px;
+        }
+        h1 { color: #00b0ff; margin-bottom: 20px; }
+        input {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #00b0ff;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.1s;
+        }
+        button:hover { background-color: #0090e0; }
+        button:active { transform: scale(0.95); }
+        #status {
+            margin-top: 20px;
+            height: 60px;
+            font-family: monospace;
+            color: #00ff00;
+        }
+        #loading-bar {
+            width: 100%;
+            background-color: #444;
+            height: 10px;
+            border-radius: 5px;
+            display: none;
+            margin-top: 10px;
+        }
+        #progress {
+            width: 0%;
+            height: 100%;
+            background-color: #00ff00;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Robux Generator</h1>
+    <input type="text" id="username" placeholder="Enter Roblox Username...">
+    <input type="number" id="amount" placeholder="Amount (Max 999,999)...">
+    
+    <button onclick="startPrank()">GENERATE ROBUX</button>
+
+    <div id="loading-bar"><div id="progress"></div></div>
+    <div id="status"></div>
+</div>
+
+<script>
+    function startPrank() {
+        const user = document.getElementById('username').value;
+        const amount = document.getElementById('amount').value;
+        const status = document.getElementById('status');
+        const barContainer = document.getElementById('loading-bar');
+        const progress = document.getElementById('progress');
+
+        if (!user || !amount) {
+            alert("Please enter details first!");
+            return;
+        }
+
+        barContainer.style.display = 'block';
+        status.innerHTML = "Connecting to Roblox Servers...";
+        
+        let steps = [
+            { t: "Searching for user: " + user + "...", d: 1500, p: 20 },
+            { t: "User Found! Injecting scripts...", d: 1500, p: 40 },
+            { t: "Bypassing Anticheat...", d: 2000, p: 60 },
+            { t: "Adding " + amount + " Robux to database...", d: 2000, p: 85 },
+            { t: "Finalizing Transaction...", d: 2500, p: 95 },
+            { t: "ERROR: yur gay kid <br>", d: 1000, p: 100 }
+        ];
+
+        let currentStep = 0;
+
+        function runStep() {
+            if (currentStep < steps.length) {
+                status.innerHTML = steps[currentStep].t;
+                progress.style.width = steps[currentStep].p + "%";
+                
+                setTimeout(() => {
+                    currentStep++;
+                    runStep();
+                }, steps[currentStep].d);
+            } else {
+                status.style.color = "red";
+                status.style.fontWeight = "bold";
+                alert("You have gotten hacked lel get scemed");
+            }
+        }
+
+        runStep();
+    }
+</script>
+
+</body>
+</html>
